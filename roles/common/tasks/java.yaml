@@ -13,3 +13,8 @@
   loop:
    - PyMySQL
    - cryptography
+
+-  name: installing dependency
+   ansible.builtin.command: mvn clean package 
+   args: 
+      chdir: /app 

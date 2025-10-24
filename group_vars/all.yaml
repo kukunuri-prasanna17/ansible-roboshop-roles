@@ -3,3 +3,4 @@ REDIS_HOST: redis.daws86s.cfd
 CATALOGUE_HOST: catalogue.daws86s.cfd
 CART_HOST: cart.daws86s.cfd
 MYSQL_HOST: mysql.daws86s.cfd
+RABBITMQ_HOST: rabbitmq.daws86s.cfd
