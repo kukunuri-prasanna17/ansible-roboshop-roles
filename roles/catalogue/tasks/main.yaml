@@ -7,7 +7,7 @@
    ansible.builtin.import_role:
     name: common
     tasks_from: nodejs.yaml
-    
+
 -  name: creating mongo repo
    ansible.builtin.copy:
         src: mongo.repo
@@ -19,13 +19,17 @@
         state: present
 
 -  name: connect to mongodb catalogue 
-   ansible.builtin.command: mongosh mongodb.daws86s.cfd --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
+   ansible.builtin.command: mongosh {{ MONGODB_HOST }} --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
    register: catalogue_output
 
 -  name: loading data 
    ansible.builtin.shell: mongosh --host mongodb.daws86s.cfd </app/db/master-data.js
    when: catalogue_output.stdout | int < 0 
 
+-  name: setup systemd service
+   ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd.yaml
 
 
    
