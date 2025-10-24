@@ -1,0 +1,3 @@
+MONGODB_HOST: mongodb.daws86s.cfd
+REDIS_HOST: redis.daws86s.cfd
+CATALOGUE_HOST: catalogue.daws86s.cfd
