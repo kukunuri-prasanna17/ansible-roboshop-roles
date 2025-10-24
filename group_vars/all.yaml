@@ -5,3 +5,5 @@ CART_HOST: cart.daws86s.cfd
 MYSQL_HOST: mysql.daws86s.cfd
 RABBITMQ_HOST: rabbitmq.daws86s.cfd
 USER_HOST: user.daws86s.cfd
+SHIPPING_HOST: shipping.daws86s.cfd
+PAYMENT_HOST: payment.daws86s.cfd
