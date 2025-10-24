@@ -23,7 +23,7 @@
    register: catalogue_output
 
 -  name: loading data 
-   ansible.builtin.shell: mongosh --host mongodb.daws86s.cfd </app/db/master-data.js
+   ansible.builtin.shell: mongosh --host  {{ MONGODB_HOST }} </app/db/master-data.js
    when: catalogue_output.stdout | int < 0 
 
 -  name: setup systemd service
