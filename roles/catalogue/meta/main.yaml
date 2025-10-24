@@ -1,0 +1,3 @@
+## Just for info that main role of catalogue is depending on another ( common-role)
+dependencies: 
+    - roles: common
