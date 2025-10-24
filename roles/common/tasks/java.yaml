@@ -1,0 +1,15 @@
+- name: installing maven dependence for java 
+  ansible.builtin.dnf:
+    state: present
+    name: "{{ item }}"
+  loop:
+     - maven
+     - mysql
+
+- name: installing pip libraries to import mysql
+  ansible.builtin.pip:
+   executable: pip3.9
+   name: "{{ item }}"
+  loop:
+   - PyMySQL
+   - cryptography

@@ -1,0 +1,38 @@
+-  name: app-setup
+   ansible.builtin.import_role:
+    name: common
+    tasks_from: app-setup.yaml  
+
+-  name: nodejs setup
+   ansible.builtin.import_role:
+    name: common
+    tasks_from: java.yaml
+
+-  name: installing dependency
+   ansible.builtin.command: mvn clean package 
+   args: 
+      chdir: /app 
+
+- name: move jar file
+  ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar 
+  args: 
+     chdir: /app
+
+
+- name: import shipping  data to mysql
+  community.mysql.mysql_db:
+        state: import
+        name: all
+        login_host: mysql.daws86s.cfd
+        login_user: root 
+        login_password: RoboShop@1
+        target: "{{ item }}"
+  loop:
+        - /app/db/schema.sql
+        - /app/db/app-user.sql
+        - /app/db/master-data.sql
+
+-  name: setup systemd service
+   ansible.builtin.import_role:
+    name: common
+    tasks_from: systemd.yaml
