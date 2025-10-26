@@ -12,3 +12,5 @@
    - name: Install nodejs dependence
      community.general.npm: 
         path: /app
+     tags: 
+     - deployment

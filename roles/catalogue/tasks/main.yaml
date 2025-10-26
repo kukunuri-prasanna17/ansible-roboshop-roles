@@ -3,15 +3,15 @@
    ansible.builtin.import_role:
     name: common
     tasks_from: app-setup.yaml 
-   #  tags:
-   #   - deployment   # you need to set-up again in common tasks to run this 
+   tags:
+   - deployment   # you need to set-up again in common tasks to run this 
 
 -  name: nodejs setup
-   ansible.builtin.import_role:
+   ansible.builtin.include_role:
     name: common
     tasks_from: nodejs.yaml
-   #  tags:
-   #   - deployment
+    tags:
+    - deployment
 
 -  name: creating mongo repo
    ansible.builtin.copy:
@@ -35,6 +35,8 @@
    ansible.builtin.import_role:
     name: common
     tasks_from: systemd.yaml
+   tags: 
+   - deployment
 
 
    
