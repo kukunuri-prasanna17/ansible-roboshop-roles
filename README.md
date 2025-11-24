@@ -9,20 +9,33 @@ Each microservice (catalogue, user, cart, payment, shipping, mongodb, mysql, red
 
 🧩 What Each Component Does
 
-tasks/
+tasks/ 
+
 Main logic for installing packages, creating users, copying files, starting services, loading schemas, and configuring the application.
 
+
+
 handlers/
+
 Actions that trigger when something changes, such as restarting or reloading services after template or config updates.
 
+
+
 templates/
+
 Dynamic Jinja2 (.j2) templates used for systemd service files, application configs, and reverse proxy configurations.
 
+
 files/
+
 Static files that must be copied to the server without modification, such as schema files or prebuilt configuration files.
 
+
 vars/
+
 Variable values used by tasks and templates, typically service-specific settings like package names, ports, or paths.
+
+
 
 🚀 How It Works
 
