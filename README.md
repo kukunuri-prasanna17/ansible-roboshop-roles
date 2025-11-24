@@ -50,14 +50,14 @@ ansible-playbook -i inventory.ini main.yml -e component=catalogue
 
 ✔️ Features
 
-1.Fully automated microservice deployment
+1. Fully automated microservice deployment
 
-2.Consistent Linux/systemd setup
+2. Consistent Linux/systemd setup
 
-3.Template-based config generation
+3. Template-based config generation
 
-4.DB schema loading for MongoDB/MySQL
+4. DB schema loading for MongoDB/MySQL
 
-5.Reusable role structure
+5. Reusable role structure
 
-6.Production-style folder layout
+6. Production-style folder layout
